@@ -10,22 +10,25 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			let firstBig = arr[0]
-			let secondBig = arr[1]
-
-			for(let i of secondHighest(arr)){
-
-				if(i >= firstBig){
-					secondBig = firstBig
-					firstBig = i
+			if (arr.length < 2) {
+				return -Infinity;
+			}
+			let firstBig = arr[0];
+		    let secondBig = -Infinity;
+			
+			for(let i of arr){
+				if(i > firstBig){
+	            secondBig = firstBig;
+	            firstBig = i;
 				}
 				else if(i > secondBig && firstBig != i){
-					secondBig = i
+					secondBig = i;
 				}
 			}
+			return secondBig;	
 			
 		}
-		return -Infinity
+		
 
 		function Main() {
 			//var n = prompt("Enter the number of elements");
