@@ -10,30 +10,30 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			let firstBig = -Infinity
-			let secondHighest = -Infinity
+			let firstBig = arr[0]
+			let secondBig = -Infinity
 
 			for(let i of secondHighest(arr)){
 
 				if(i >= firstBig){
-					secondHighest = firstBig
+					secondBig = firstBig
 					firstBig = i
 				}
-				else if(i > secondHighest){
-					secondHighest = i
+				else if(i > secondBig && firstBig != i){
+					secondBig = i
 				}
 			}
-			return secondHighest
+			return secondBig
 			
 		}
 
 		function Main() {
-			var n = prompt("Enter the number of elements");
+			//var n = prompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));
 			}
-			alert(secondHighest(arr));
+			//alert(secondHighest(arr));
 		}
 		Main();
 	</script>
